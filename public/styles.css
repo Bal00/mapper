@@ -43,6 +43,19 @@ button { cursor: pointer; }
 .viz { padding: 16px 0 28px 0; display: flex; justify-content: center; align-items: center; }
 #svg { background: #0e1117; border: 1px solid var(--border); border-radius: 12px; }
 
+/* --- PURE LINE ART --- */
+.node circle { fill: none; stroke: #000; stroke-width: 1.5px; }
+.node text { fill: #000; }
+.link { stroke: #000; stroke-opacity: 1; }      /* “stalks” become black lines */
+.center { fill: none; stroke: #000; stroke-width: 2px; } /* central “you” node as a circle outline */
+.ring { stroke: #000; stroke-opacity: 0.25; fill: none; stroke-dasharray: 4 6; } /* faint guide rings */
+.tooltip { background: #fff; color: #000; border: 1px solid #000; } /* optional, to keep tooltips readable */
+
+/* Optional: thin table borders in black */
+#table th, #table td { border-bottom: 1px solid var(--border); }
+.action { color: #000; border-color: var(--border); }
+
+/*
 .node text {
   font-size: 12px; fill: #dbe1e8; pointer-events: none; text-anchor: middle; dominant-baseline: central;
 }
@@ -54,3 +67,4 @@ button { cursor: pointer; }
   position: absolute; pointer-events: none; background: #11151d; color: var(--text);
   border: 1px solid var(--border); padding: 8px 10px; border-radius: 8px; font-size: 12px; display: none;
 }
+*/
