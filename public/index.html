@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Stakeholder Ego Map</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header>
+    <h1>Stakeholder Ego Map</h1>
+    <p>Size = importance • Distance = proximity • Line width = relationship strength</p>
+  </header>
+
+  <section class="panel">
+    <form id="form">
+      <div class="grid">
+        <label>
+          Name
+          <input id="name" required placeholder="e.g., Finance Dept" />
+        </label>
+        <label>
+          Category
+          <input id="category" placeholder="e.g., Internal" />
+        </label>
+        <label>
+          Importance (0–100)
+          <input id="importance" type="number" min="0" max="100" value="60" />
+        </label>
+        <label>
+          Proximity (0–100)
+          <input id="proximity" type="number" min="0" max="100" value="40" />
+        </label>
+        <label>
+          Relationship strength (0–10)
+          <input id="strength" type="number" min="0" max="10" value="6" />
+        </label>
+        <label>
+          Notes
+          <input id="notes" placeholder="context, goals, etc." />
+        </label>
+      </div>
+      <div class="buttons">
+        <button type="submit">Add / Update</button>
+        <button type="button" id="clearForm">Clear</button>
+      </div>
+    </form>
+
+    <div class="toolbar">
+      <button id="render">Render Map</button>
+      <button id="save">Save to browser</button>
+      <button id="load">Load from browser</button>
+      <button id="exportJSON">Export JSON</button>
+      <input id="importJSON" type="file" accept="application/json" />
+      <button id="downloadPNG">Download PNG</button>
+    </div>
+
+    <table id="table">
+      <thead>
+        <tr><th>Name</th><th>Category</th><th>Importance</th><th>Proximity</th><th>Strength</th><th></th></tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </section>
+
+  <section class="viz">
+    <svg id="svg" width="900" height="600" role="img" aria-label="Stakeholder map"></svg>
+  </section>
+
+  <footer>
+    <small>Tip: lower proximity means closer to you (smaller radius). Drag nodes to adjust layout; edits reflect on re-render.</small>
+  </footer>
+</body>
+</html>
