@@ -41,10 +41,10 @@ button { cursor: pointer; }
 .action { color: #ffb84d; background: transparent; border: 1px dashed var(--border); padding: 6px 10px; border-radius: 6px; }
 
 .viz { padding: 16px 0 28px 0; display: flex; justify-content: center; align-items: center; }
-#svg { background: #0e1117; border: 1px solid var(--border); border-radius: 12px; }
+#svg { background: #fff; border: 1px solid var(--border); border-radius: 12px; }
 
 /* --- PURE LINE ART --- */
-.node circle { fill: none; stroke: #000; stroke-width: 1.5px; }
+.node circle { fill: #fff; stroke: #000; stroke-width: 1.5px; }
 .node text { fill: #000; }
 .link { stroke: #000; stroke-opacity: 1; }      /* “stalks” become black lines */
 .center { fill: none; stroke: #000; stroke-width: 2px; } /* central “you” node as a circle outline */
